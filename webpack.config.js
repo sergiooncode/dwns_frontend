@@ -1,6 +1,7 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
 	entry: './src/app.js',
@@ -41,6 +42,13 @@ module.exports = {
 				'NODE_ENV': JSON.stringify('development')
 			}
 		}),
-		new webpack.optimize.AggressiveMergingPlugin() //Merge chunks
+		new webpack.optimize.AggressiveMergingPlugin(), //Merge chunks
+		new CompressionPlugin({ // this is the new code you have to add
+			filename: "[path].gz[query]",
+			algorithm: "gzip",
+			test: /\.js$|\.css$|\.html$/,
+			threshold: 10240,
+			minRatio: 0.8
+		})
 	]
 };
