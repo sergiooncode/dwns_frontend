@@ -15,7 +15,9 @@ import CompanyDetail from './CompanyDetail'
 import 'normalize.css'
 import { withStyles } from '@material-ui/core/styles'
 
-console.log("App is running")
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
 
 const app = {
 	title: "Daddy Wants No Scammy",

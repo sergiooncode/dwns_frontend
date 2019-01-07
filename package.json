@@ -7,7 +7,8 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "serve": "serve ./public",
-    "build": "webpack --mode development --watch",
+    "build-dev": "webpack --mode development --watch --config webpack.config.js",
+    "build": "webpack --config webpack.prod.config.js",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
   },
   "dependencies": {
