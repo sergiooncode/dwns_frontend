@@ -14,6 +14,7 @@ import { relayConnectionToArray } from './utils/transformations'
 import CompanyDetail from './CompanyDetail'
 import 'normalize.css'
 import { withStyles } from '@material-ui/core/styles'
+import * as siteCopywriting from './siteCopywriting.js'
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
@@ -155,22 +156,31 @@ const CompanyDetailPageWithData = graphql(GET_EXPERIENCES_BY_COMPANY_GUID, {
   },
 })(CompanyDetailPage)
 
-const Home = ({classes}) => (
-  <MuiThemeProvider theme={theme}>
-    <NavBar />
-    <div className={classes.wrapper}>
-      <h2>
-        Rental car companies
-      </h2>
-      <p>
-        I've made use of rental car companies several times and different countries.
-      </p>
-      <a target="_blank" href="https://mvpsourcerer.typeform.com/to/XFXgXO">
-        Get it off your chest, please tell us all about it on this 10-question form!
-      </a>
-    </div>
-  </MuiThemeProvider>
-)
+const Home = ({classes}) => {
+  const {
+    HOME_HEADLINE,
+    HOME_MAIN_PARAGRAPH,
+    HOME_FEEDBACK_FORM_LINK,
+    HOME_FEEDBACK_FORM_URL
+  } = siteCopywriting
+
+  return (
+    <MuiThemeProvider theme={theme}>
+      <NavBar />
+      <div className={classes.wrapper}>
+        <h2>
+          { HOME_HEADLINE }
+        </h2>
+        <p>
+          { HOME_MAIN_PARAGRAPH }
+        </p>
+        <a target="_blank" href={ HOME_FEEDBACK_FORM_URL }>
+          { HOME_FEEDBACK_FORM_LINK }
+        </a>
+      </div>
+    </MuiThemeProvider>
+  )
+}
 
 const homeStyles = {
   wrapper: {
