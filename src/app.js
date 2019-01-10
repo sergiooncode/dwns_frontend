@@ -159,7 +159,9 @@ const CompanyDetailPageWithData = graphql(GET_EXPERIENCES_BY_COMPANY_GUID, {
 const Home = ({classes}) => {
   const {
     HOME_HEADLINE,
-    HOME_MAIN_PARAGRAPH,
+    HOME_MAIN_PARAGRAPH_1,
+    HOME_MAIN_PARAGRAPH_2,
+    HOME_MAIN_PARAGRAPH_3,
     HOME_FEEDBACK_FORM_LINK,
     HOME_FEEDBACK_FORM_URL
   } = siteCopywriting
@@ -175,7 +177,9 @@ const Home = ({classes}) => {
         </header>
         <main>
           <article className={classes.mainParagraph}>
-            { HOME_MAIN_PARAGRAPH }
+            <p>{ HOME_MAIN_PARAGRAPH_1 }</p>
+            <p>{ HOME_MAIN_PARAGRAPH_2 }</p>
+            <p>{ HOME_MAIN_PARAGRAPH_3 }</p>
           </article>
         </main>
         <div className={classes.formLink}>
