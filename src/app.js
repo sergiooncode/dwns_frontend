@@ -162,6 +162,9 @@ const Home = ({classes}) => {
     HOME_MAIN_PARAGRAPH_1,
     HOME_MAIN_PARAGRAPH_2,
     HOME_MAIN_PARAGRAPH_3,
+    HOME_MAIN_PARAGRAPH_4,
+    HOME_MAIN_PARAGRAPH_5,
+    HOME_MAIN_PARAGRAPH_6,
     HOME_FEEDBACK_FORM_LINK,
     HOME_FEEDBACK_FORM_URL
   } = siteCopywriting
@@ -178,15 +181,19 @@ const Home = ({classes}) => {
         <main>
           <article className={classes.mainParagraph}>
             <p>{ HOME_MAIN_PARAGRAPH_1 }</p>
+            <div className={classes.formLink}>
+              <a target="_blank" href={ HOME_FEEDBACK_FORM_URL }>
+                { HOME_FEEDBACK_FORM_LINK }
+              </a>
+            </div>
             <p>{ HOME_MAIN_PARAGRAPH_2 }</p>
+            <h3>Why I do this</h3>
             <p>{ HOME_MAIN_PARAGRAPH_3 }</p>
+            <p>{ HOME_MAIN_PARAGRAPH_4 }</p>
+            <p>{ HOME_MAIN_PARAGRAPH_5 }</p>
+            <p>{ HOME_MAIN_PARAGRAPH_6 }</p>
           </article>
         </main>
-        <div className={classes.formLink}>
-          <a target="_blank" href={ HOME_FEEDBACK_FORM_URL }>
-            { HOME_FEEDBACK_FORM_LINK }
-          </a>
-        </div>
       </div>
     </MuiThemeProvider>
   )
@@ -197,8 +204,6 @@ const homeStyles = {
     margin: 25,
     fontFamily: ['Open Sans', 'sans-serif'].join(','),
     fontSize: 14,
-  },
-  mainParagraph: {
   },
   formLink: {
     margin: 15,
@@ -245,12 +250,35 @@ const formPageStyles = {
 
 const FormPageWithStyles = withStyles(formPageStyles)(FormPage)
 
+const ContactPage = ({classes}) => (
+  <MuiThemeProvider theme={theme}>
+  <NavBar />
+  <div className={classes.wrapper}>
+    <p>
+      If you have any questions regarding any aspect of the experiment or just wonder where your answers will go please feel free to drop me an email:
+    </p>
+    <p>daddywantsnoscammy@gmail.com</p>
+  </div>
+  </MuiThemeProvider>
+)
+
+const contactPageStyles = {
+  wrapper: {
+    margin: 25,
+    fontFamily: ['Open Sans', 'sans-serif'].join(','),
+    fontSize: 14,
+  },
+}
+
+const ContactPageWithStyles = withStyles(contactPageStyles)(ContactPage)
+
 const renderApp = () => {
 
   const template = (
     <ApolloProvider client={client}>
       <Router>
         <Route exact path='/' component={ HomeWithStyles }/>
+        <Route path='/contact' component={ ContactPageWithStyles }/>
         {/* <Route path='/companies' component={ CompaniesGridPageWithData }/>
         <Route path='/form' component={ FormPageWithStyles }/>
         <Route path='/companies/:id' component={ ChildWithStyles } /> */}

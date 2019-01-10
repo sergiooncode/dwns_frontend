@@ -43,6 +43,14 @@ const NavBar = props => {
                             Home
                         </NavLink>
                     </Button>
+                    <Button color="inherit">
+                        <NavLink
+                            className={classes.navLink}
+                            to="/contact"
+                        >
+                            Contact
+                        </NavLink>
+                    </Button>
                     {/* <Button color="inherit">
                         <NavLink
                             className={classes.navLink}
