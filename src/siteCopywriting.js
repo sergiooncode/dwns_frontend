@@ -6,7 +6,7 @@ export const HOME_MAIN_PARAGRAPH = "I've made use of car rental companies " +
 "experiences which led me to dig deeper " +
 "into what consumers out there had to say " +
 "about car rental companies."
-export const HOME_FEEDBACK_FORM_LINK = "Regardless if it was good or " +
+export const HOME_FEEDBACK_FORM_LINK = "Regardless if good or " +
 "bad please tell us all about your car rental experience on this 9-question " +
 "form!"
 export const HOME_FEEDBACK_FORM_URL = "https://mvpsourcerer.typeform.com/to/XFXgXO"

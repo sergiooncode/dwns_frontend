@@ -168,15 +168,21 @@ const Home = ({classes}) => {
     <MuiThemeProvider theme={theme}>
       <NavBar />
       <div className={classes.wrapper}>
-        <h2>
-          { HOME_HEADLINE }
-        </h2>
-        <p>
-          { HOME_MAIN_PARAGRAPH }
-        </p>
-        <a target="_blank" href={ HOME_FEEDBACK_FORM_URL }>
-          { HOME_FEEDBACK_FORM_LINK }
-        </a>
+        <header>
+          <h2>
+            { HOME_HEADLINE }
+          </h2>
+        </header>
+        <main>
+          <article className={classes.mainParagraph}>
+            { HOME_MAIN_PARAGRAPH }
+          </article>
+        </main>
+        <div className={classes.formLink}>
+          <a target="_blank" href={ HOME_FEEDBACK_FORM_URL }>
+            { HOME_FEEDBACK_FORM_LINK }
+          </a>
+        </div>
       </div>
     </MuiThemeProvider>
   )
@@ -187,6 +193,11 @@ const homeStyles = {
     margin: 25,
     fontFamily: ['Open Sans', 'sans-serif'].join(','),
     fontSize: 14,
+  },
+  mainParagraph: {
+  },
+  formLink: {
+    margin: 15,
   },
 }
 
